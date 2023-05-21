@@ -1,7 +1,7 @@
 
 <div align="center">
 <h1 align="center">
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/python.svg" width="100" />
 <br>
 Python Reinsurance Computation
 </h1>
@@ -24,16 +24,16 @@ Python Reinsurance Computation
   - [Installation](#installation)
   - [Basic example](#basic-example)
   - [Running Tests](#running-tests)
-- [🛠 Future Development](#-future-development)
+- [Future Development](#future-development)
 - [Contributing](#contributing)
-- [🪪 License](#-license)
+- [License](#license)
 
 ---
 
 
 ## Overview
 
-Reinsurance-calculator is a GitHub project that provides an open-source calculator for analyzing reinsurance contracts and creating quick and accurate reports. It offers a modern user-interface with dynamic charting capabilities as well as an extensible analytics library for creating custom reports and calculations.
+Reinsurance is a python package that intends to provide a framework for reinsurance computation. It is built on top of [NumPy](https://numpy.org/) and [Dask](https://dask.org/). It is designed to be modular, fast and easy to use. Leveraging the power of Dask, it can perform parallel and distributed computation to allow for large scale reinsurance computation. It is still in very early development.
 
 ## Features
 
@@ -146,7 +146,7 @@ TBD
 <hr />
 
 
-## 🛠 Future Development
+## Future Development
 Still in very early development. The following features are planned for future releases:
 - [ ] Add more layers
 - [ ] Add more tests
@@ -183,7 +183,7 @@ The project maintainers will review your changes and provide feedback or merge t
 
 ---
 
-## 🪪 License
+## License
 
 This project is licensed under the `MPL 2.0` License. See the LICENSE file for additional info.
 
