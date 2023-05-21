@@ -57,7 +57,6 @@ class ExcessOfLossLayer(Layer):
         layer_burn = np.diff(layer_burn, prepend=0)
         return layer_burn
 
-    @delayed(nout=1)
     def _recovery(self, x: np.ndarray) -> dict[str, np.ndarray]:
         """
         Calculate the recovery array.
@@ -71,7 +70,6 @@ class ExcessOfLossLayer(Layer):
         recovery = self._burn(x) * self.width * (1 - self.deductible)
         return recovery
 
-    @delayed(nout=1)
     def _reinstatement_premium(self, x: np.ndarray) -> dict[str, np.ndarray]:
         """
         Calculate the reinstatement premium array.

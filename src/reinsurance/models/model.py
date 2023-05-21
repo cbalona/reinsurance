@@ -32,24 +32,10 @@ class Model:
         Returns:
             list[np.ndarray | dict[str, np.ndarray]]: List of computed outputs.
         """
-        computed_outputs = []
-        for output_layer in self.output_layers:
-            if isinstance(output_layer.output, np.ndarray):
-                computed_outputs.append(output_layer.output)
-                continue
 
-            if isinstance(output_layer.output, dict):
-                for key in output_layer.output.keys():
-                    if isinstance(output_layer.output[key], np.ndarray):
-                        continue
-                    output_layer.output[key] = output_layer.output[key].compute(
-                        scheduler=scheduler
-                    )
-                computed_outputs.append(output_layer.output)
-                continue
-
-            computed_outputs.append(output_layer.output.compute(scheduler=scheduler))
-
+        computed_outputs = [
+            output_layer.output.compute() for output_layer in self.output_layers
+        ]
         return computed_outputs
 
     def visualize(self) -> None:
