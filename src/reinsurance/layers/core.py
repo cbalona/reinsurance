@@ -4,7 +4,7 @@ Collection of base classes for overall layer implementation.
 from typing import Self
 import numpy as np
 from dask import delayed
-
+import dask.array as da
 
 class Layer:
     def __init__(self, name: str = None) -> None:
@@ -265,7 +265,7 @@ class Divide(Layer):
 
 
 class Input(Layer):
-    def __init__(self, x: np.ndarray, name: str = None) -> None:
+    def __init__(self, name: str = None) -> None:
         """
         Initialize an Input layer.
 
@@ -273,7 +273,6 @@ class Input(Layer):
             x (np.ndarray): Input array.
         """
         super().__init__()
-        self.output = self.forward(x)
         self.name = name
 
     @delayed(nout=1)
@@ -287,7 +286,7 @@ class Input(Layer):
         Returns:
             np.ndarray: Input array.
         """
-        return x
+        return da.from_array(x)
 
     def forward(self, x: np.ndarray) -> np.ndarray:
         """
@@ -300,6 +299,19 @@ class Input(Layer):
             np.ndarray: Output array.
         """
         return self.input(x, dask_key_name=self.name)
+
+    def __call__(self, x: np.ndarray) -> Self:
+        """
+        Perform forward pass through the layer.
+
+        Args:
+            input_layer (Self): Input layer.
+
+        Returns:
+            Self: Output layer.
+        """
+        self.output = self.forward(x)
+        return self
 
 
 class Recovery(Layer):
