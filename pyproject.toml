@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reinsurance"
+description = "A computational reinsurance package for Python."
+version = "0.1.dev0"
+authors = [
+    { name = "Caesar Balona", email = "caesar.balona@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MPL-2.0 License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["numpy", "dask"]
+
+[project.urls]
+"Homepage" = "https://github.com/cbalona/reinsurance"
+
+[project.optional-dependencies]
+dev = ["ruff", "black"]
