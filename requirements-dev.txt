@@ -18,22 +18,33 @@ fsspec==2023.5.0
     # via dask
 importlib-metadata==6.6.0
     # via dask
+iniconfig==2.0.0
+    # via pytest
 locket==1.0.0
     # via partd
+mypy==1.3.0
+    # via reinsurance (pyproject.toml)
 mypy-extensions==1.0.0
-    # via black
+    # via
+    #   black
+    #   mypy
 numpy==1.24.3
     # via reinsurance (pyproject.toml)
 packaging==23.1
     # via
     #   black
     #   dask
+    #   pytest
 partd==1.4.0
     # via dask
 pathspec==0.11.1
     # via black
 platformdirs==3.5.1
     # via black
+pluggy==1.0.0
+    # via pytest
+pytest==7.3.1
+    # via reinsurance (pyproject.toml)
 pyyaml==6.0
     # via dask
 ruff==0.0.270
@@ -42,5 +53,7 @@ toolz==0.12.0
     # via
     #   dask
     #   partd
+typing-extensions==4.6.2
+    # via mypy
 zipp==3.15.0
     # via importlib-metadata

@@ -6,9 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "reinsurance"
 description = "A computational reinsurance package for Python."
 version = "0.1.dev0"
-authors = [
-    { name = "Caesar Balona", email = "caesar.balona@gmail.com" }
-]
+authors = [{ name = "Caesar Balona", email = "caesar.balona@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
@@ -22,4 +20,4 @@ dependencies = ["numpy", "dask"]
 "Homepage" = "https://github.com/cbalona/reinsurance"
 
 [project.optional-dependencies]
-dev = ["ruff", "black"]
+dev = ["ruff", "black", "mypy", "pytest"]

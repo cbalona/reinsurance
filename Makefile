@@ -14,7 +14,7 @@ endif
 venv: .venv/touchfile
 
 .venv/touchfile: requirements.txt requirements-dev.txt
-	$(VENV); pip-sync
+	$(VENV); pip-sync requirements.txt requirements-dev.txt
 	touch .venv/touchfile
 
 requirements.txt: $(PROJECT_CONFIG)
@@ -32,7 +32,7 @@ ruff:
 	$(VENV); ruff .
 
 format:
-	$(VENV); ruff . --fix
+	$(VENV); ruff .
 	$(VENV); black .
 
 test:

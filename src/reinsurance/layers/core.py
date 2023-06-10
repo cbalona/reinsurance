@@ -2,9 +2,11 @@
 Collection of base classes for overall layer implementation.
 """
 from typing import Self
+
+import dask.array as da
 import numpy as np
 from dask import delayed
-import dask.array as da
+
 
 class Layer:
     def __init__(self, name: str = None) -> None:
