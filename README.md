@@ -135,7 +135,7 @@ model.visualize()
  [24.5 24.5 24.5]
  [12.  12.  12. ]]
 ```
-<img src="https://imgur.com/mYtD3HP" height=1080>
+<img src="https://i.imgur.com/mYtD3HP.png" height=1080>
 
 
 ### Running Tests
